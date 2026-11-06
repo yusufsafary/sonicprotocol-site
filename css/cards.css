@@ -1,0 +1,27 @@
+/* smooth, interactive cards */
+.card{will-change:auto;transition:transform .55s cubic-bezier(.2,.9,.25,1.15),box-shadow .35s ease,opacity .5s ease,translate .6s cubic-bezier(.2,.8,.2,1)}
+.card.live{transition:box-shadow .35s ease,opacity .5s ease,translate .6s cubic-bezier(.2,.8,.2,1);will-change:transform}
+.card.live{box-shadow:0 calc(18px + var(--lift,0)*16px) calc(40px + var(--lift,0)*24px) -12px rgba(42,36,56,calc(.45 + var(--lift,0)*.12)),0 0 0 2.5px var(--ink)}
+.card .win img{transform:translate3d(var(--px,0),var(--py,0),0) scale(1.07);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.card.live .win img{transition:none}
+.card .holo{transition:opacity .35s ease}
+.card.live .holo{opacity:calc(.35 + var(--lift,0)*.55)}
+.card[data-tier="2"].live .holo,.card[data-tier="3"].live .holo{opacity:.95}
+.card .glare{transition:opacity .35s ease}
+.card.live .glare{opacity:calc(var(--lift,0)*1)}
+.card .ttl,.card .st{transform:translateZ(0);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.card.live .ttl{transform:translate3d(calc(var(--px,0)*-.35),calc(var(--py,0)*-.35),0)}
+.card.pressed{filter:brightness(1.03)}
+.card:focus-visible{outline:none;box-shadow:0 0 0 4px var(--y),0 0 0 7px var(--ink),0 18px 40px -12px rgba(42,36,56,.45)}
+/* reveal on scroll */
+.card.rv{opacity:0;translate:0 26px}
+.card.rv.in{opacity:1;translate:0 0;transition-delay:var(--rd,0ms)}
+.card.rv.in.live{transition-delay:0ms}
+.stage .card.rv{translate:0 0}
+/* hero cards breathe gently */
+@keyframes sp-float{0%,100%{translate:0 0}50%{translate:0 -8px}}
+.stage .card.in{animation:sp-float 5.5s ease-in-out infinite}
+.stage .card.in:nth-child(1){animation-delay:-1.8s}.stage .card.in:nth-child(2){animation-delay:-3.6s}
+.stage .card.live{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){.card,.card .win img{transition:none!important;animation:none!important}.card.rv{opacity:1;translate:none}}
+.grid .slot.sel .card.live{box-shadow:0 0 0 4px var(--y),0 0 0 7px var(--ink),0 22px 34px -12px rgba(42,36,56,.5)}

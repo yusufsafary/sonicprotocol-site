@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sonic Protocol: cute sound cards for AI agents on BNB Chain</title>
+<meta name="description" content="6,666 cute sound spirits on BNB Chain. Free cards sold out. Paid mint for Binance Agentic Wallets with an Agent ID. Fuse 3 cards into 1 to climb from Tone to Sonic Boom.">
+<meta name="theme-color" content="#FFF6E8">
+<meta property="og:title" content="Sonic Protocol">
+<meta property="og:description" content="Cute cards. Real sound. Agents only. Free sold out, mint paid, fuse 3 into 1.">
+<meta property="og:image" content="https://yusufsafary.github.io/sonicprotocol-site/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/mobile.css">
+<link rel="stylesheet" href="css/cards.css">
+</head>
+<body>
+<div class="sp-progress" aria-hidden="true"></div>
+<div class="announce" role="note"><span class="announce-dot" aria-hidden="true"></span><span><b>$SONIC</b> launches Sunday, 15 November on PancakeSwap, 00:00 UTC. No bonding curve, direct to the pool. Every holder of the 6,666 cards shares a 12% airdrop. <a href="tokenomics.html" style="color:var(--y);font-weight:700;white-space:nowrap">Tokenomics →</a></span></div>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Sonic Protocol home"><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2A2438" stroke-width="2.6" stroke-linecap="round"><path d="M3 12h2M7 8v8M11 5v14M15 8v8M19 11v2"/></svg></i>Sonic Protocol</a>
+    <nav class="nav" aria-label="Main"><a href="#fuse">Fuse</a><a href="#claim">Claim</a><a href="#tiers">Tiers</a><a href="#deck">My Deck</a><a href="#rules">Rules</a><a href="#market">Market</a><a href="tokenomics.html">Tokenomics</a></nav>
+    <a class="btn btn--y btn--sm" href="#claim">Mint now</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="pill pill--y">● Agents only · BNB Chain</span>
+      <h1>Cute cards.<br>Real sound.<br><span class="hl">Fuse 3 → 1.</span></h1>
+      <p class="lead">6,666 sound spirits you can hear. Free cards are sold out. Mint one with your Binance Agentic Wallet, then fuse three of the same tier into one rarer card — all the way to Sonic Boom.</p>
+      <div class="ctas"><a class="btn btn--y btn--lg" href="#claim">Mint your card</a><a class="btn btn--lg" href="#deck">Fuse my cards</a></div>
+      <div class="counters" aria-live="polite">
+        <div class="counter"><small>Free</small><b id="cFree">Sold out</b><div class="bar"><i id="bFree"></i></div></div>
+        <div class="counter"><small>Paid $0.60</small><b id="cPaid">0 / 4,406</b><div class="bar"><i id="bPaid"></i></div></div>
+        <div class="counter"><small>Fusions</small><b id="cFuse">0</b><div class="bar"><i id="bFuse" style="width:100%;background:var(--violet)"></i></div></div>
+      </div>
+    </div>
+    <div class="stage" id="heroStage"><span class="pill tap-hint">♪ Tap a card to hear it</span></div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div>FREE CARDS SOLD OUT ✦ 3 TONES = 1 CHORD ✦ 3 CHORDS = 1 HARMONY ✦ 3 HARMONIES = 1 SONIC BOOM ✦ EVERY CARD PLAYS ITS OWN NOTE ✦ $SONIC LAUNCHES 15 NOV ON PANCAKESWAP ✦ FREE CARDS SOLD OUT ✦ 3 TONES = 1 CHORD ✦</div></div>
+
+<section class="fusion" id="fuse">
+  <div class="wrap">
+    <div class="sec-h rv"><span class="pill">The one rule</span><h2>Three cards in.<br>One rarer card out.</h2><p>Pick any 3 cards of the same tier. Fuse them. They are burned forever, and you get 1 card of the next tier that plays all three notes as a chord.</p></div>
+    <div class="mixer go rv" id="mixer" aria-label="Animation: three Tone cards merge into one Chord card">
+      <div class="m m1"></div><div class="m m2"></div><div class="m m3"></div>
+      <div class="pot">3 → 1</div><div class="flash"></div><div class="res"></div>
+    </div>
+    <div class="eq rv"><span class="pill">Tone</span><span class="x">+</span><span class="pill">Tone</span><span class="x">+</span><span class="pill">Tone</span><span class="x">=</span><span class="pill pill--y">Chord ✦</span></div>
+    <div style="text-align:center;margin-top:14px" class="rv"><button class="btn btn--ink" id="playChord">♪ Hear the chord</button></div>
+    <div class="ladder" id="ladder"></div>
+    <p style="text-align:center;color:var(--ink2);margin-top:18px" class="rv">Fusion is open to anyone holding cards, agent or not. No luck involved: the result is always the next tier.</p>
+  </div>
+</section>
+
+<section id="claim">
+  <div class="wrap">
+    <div class="sec-h rv"><span class="pill">Claim</span><h2>Let your agent mint it.</h2><p>Minting is reserved for Binance Agentic Wallets holding an Agent ID (.ai). The contract checks it on-chain. Free cards are sold out. Up to 10 paid per wallet at $0.60.</p></div>
+    <div class="claim-grid">
+      <div class="panel rv">
+        <div class="steps">
+          <div class="step"><div class="n">1</div><div><h3>Check your wallet</h3><p>Paste your Agentic Wallet address. We read the chain to see if it holds an Agent ID and what it can still mint.</p></div></div>
+          <div class="step"><div class="n">2</div><div><h3>Hand the prompt to your agent</h3><p>Your agent fetches the ready-made transaction and runs it with the baw CLI. No forms, no posts, no voucher.</p></div></div>
+          <div class="step"><div class="n">3</div><div><h3>Reveal and listen</h3><p>Come back, flip your card and hear its note. Then start collecting threes.</p></div></div>
+        </div>
+        <form class="field" id="checkForm" style="margin-top:20px" novalidate>
+          <label class="sr" for="wallet">Agentic Wallet address</label>
+          <input class="input" id="wallet" placeholder="0x… your Agentic Wallet" autocomplete="off" autocapitalize="off" spellcheck="false">
+          <button class="btn btn--y" type="submit">Check</button>
+        </form>
+        <div class="status" id="checkMsg" role="status"></div>
+      </div>
+      <div class="panel rv">
+        <div class="tabs" role="tablist"><button role="tab" aria-selected="false" data-k="free" disabled>Free · sold out</button><button role="tab" aria-selected="true" data-k="paid">Paid · $0.60</button></div>
+        <div class="qty" id="qtyRow"><button type="button" id="qMinus" aria-label="Fewer">−</button><output id="qty">1</output><button type="button" id="qPlus" aria-label="More">+</button><span class="price" id="qPrice">$0.60</span></div>
+        <div class="presets" id="presetRow"><button type="button" data-q="3">3 <small>= 1 Chord</small></button><button type="button" data-q="9">9 <small>= 1 Harmony</small></button><button type="button" data-q="10">10 <small>max</small></button></div>
+        <label class="autofuse" id="afRow"><input type="checkbox" id="autoFuse" checked> <span><b>Auto-fuse after mint</b> Your agent fuses every 3 matching cards right away.</span></label>
+        <pre class="prompt" id="prompt"></pre>
+        <p style="font-size:14px;color:var(--ink2);margin:12px 0 0">Not an agent? You can still collect and fuse: buy cards on any BNB Chain NFT marketplace.</p>
+      </div>
+    </div>
+    <div class="panel rv" style="margin-top:18px">
+      <h3 style="margin:0 0 6px;font-size:22px">Already minted? Reveal your newest card</h3>
+      <p style="margin:0 0 12px;color:var(--ink2)">Enter the wallet that minted. We find its latest card and flip it for you.</p>
+      <form class="field" id="revealForm" novalidate><label class="sr" for="rwallet">Wallet</label><input class="input" id="rwallet" placeholder="0x…" autocomplete="off" spellcheck="false"><button class="btn btn--ink" type="submit">Reveal</button></form>
+      <div class="status" id="revealMsg" role="status"></div>
+      <div class="reveal" id="revealBox" hidden></div>
+    </div>
+  </div>
+</section>
+
+<section id="anatomy">
+  <div class="wrap">
+    <div class="sec-h rv"><span class="pill">Anatomy</span><h2>Read a card in 5 seconds.</h2><p>Everything on a card comes from its on-chain seed. Nothing is rolled off-chain.</p></div>
+    <div class="anat">
+      <div class="rv" style="position:relative" id="anatCard"></div>
+      <ol class="rv">
+        <li><span>01</span><div><b>Rarity</b><p>Common Tone, Rare Chord, Epic Harmony, Legendary Sonic Boom. Only fusion moves a card up.</p></div></li>
+        <li><span>02</span><div><b>Card number</b><p>#0001 to #6666 are minted. Higher numbers are born from fusions.</p></div></li>
+        <li><span>03</span><div><b>Species</b><p>Each tier has its own spirits: 6 Tones, 4 Chords, 3 Harmonies, 2 Sonic Booms.</p></div></li>
+        <li><span>04</span><div><b>Note or chord</b><p>A Tone sings one note. A fused card keeps the three notes of the cards that made it.</p></div></li>
+        <li><span>05</span><div><b>Wave</b><p>Sine, triangle, square or saw. It shapes how the card actually sounds when you tap it.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="tiers">
+  <div class="wrap">
+    <div class="sec-h rv"><span class="pill">Tiers</span><h2>Four tiers. One way up.</h2><p>Tap the swatches to meet every spirit. Live counts come straight from the contract.</p></div>
+    <div class="tiers" id="tierGrid"></div>
+  </div>
+</section>
+
+<section id="deck">
+  <div class="wrap">
+    <div class="sec-h rv"><span class="pill">My Deck</span><h2>Your cards, your mixer.</h2><p>Load your wallet, then tap Fuse. We pick three matching cards for you, or choose your own.</p></div>
+    <form class="field rv" id="deckForm" novalidate style="max-width:640px;margin:0 auto"><label class="sr" for="dwallet">Wallet</label><input class="input" id="dwallet" placeholder="0x… any wallet" autocomplete="off" spellcheck="false"><button class="btn btn--y" type="submit">Load deck</button><button class="btn" type="button" id="connectDeck">Connect wallet</button></form>
+    <div class="deck-bar"><div class="filters" id="filters"><button aria-pressed="true" data-t="all">All</button><button aria-pressed="false" data-t="0">Tone</button><button aria-pressed="false" data-t="1">Chord</button><button aria-pressed="false" data-t="2">Harmony</button><button aria-pressed="false" data-t="3">Sonic Boom</button></div><span class="mono" id="deckCount" style="font-size:13px;color:var(--ink2)"></span></div>
+    <div class="hint" id="fuseHint" hidden><div><b id="hintT">You can fuse now</b><span id="hintS">3 cards of the same tier are ready.</span></div><button class="btn btn--y btn--sm" type="button" id="hintGo">Fuse now</button><button class="btn btn--sm" type="button" id="hintAgent">Agent prompt: fuse all</button></div>
+    <div id="deckGrid" class="grid"></div>
+    <div class="empty" id="deckEmpty">No deck loaded yet.</div>
+    <div class="lab" id="lab" hidden>
+      <div class="slots"><i></i><i></i><i></i></div>
+      <div class="txt" id="labTxt"><b>Fusion Lab</b>Select 3 cards of the same tier</div>
+      <div class="lab-btns"><button class="btn btn--sm lab-auto" id="labAuto" type="button">Auto-pick</button><button class="btn btn--y btn--sm" id="labGo" type="button" disabled>Fuse</button></div>
+    </div>
+  </div>
+<div class="sheet" id="fuseSheet" hidden role="dialog" aria-modal="true" aria-labelledby="fsTitle">
+  <div class="sheet-in">
+    <button class="sheet-x" type="button" id="fsClose" aria-label="Close">×</button>
+    <span class="pill">Fusion</span>
+    <h3 id="fsTitle">3 Tones → 1 Chord</h3>
+    <div class="fs-row" id="fsCards"></div>
+    <p class="fs-note">The three cards are burned forever. You pay gas only (about 0.0002 BNB). No Agent ID needed.</p>
+    <button class="btn btn--y btn--lg fs-b" type="button" id="fsAll" hidden>Fuse everything</button>
+    <button class="btn btn--y btn--lg fs-b" type="button" id="fsWallet">Fuse with my wallet</button>
+    <button class="btn btn--lg fs-b" type="button" id="fsAgent">Copy prompt for my agent</button>
+    <div class="status" id="fsMsg" role="status"></div>
+    <div class="reveal" id="fsReveal" hidden></div>
+  </div>
+</div>
+</section>
+
+<section id="recent">
+  <div class="wrap">
+    <div class="sec-h rv" style="margin-bottom:14px"><span class="pill">Live</span><h2>Freshly minted</h2></div>
+    <div class="strip" id="strip"><div class="empty" style="flex:1">The first cards appear here the moment agents start minting.</div></div>
+  </div>
+</section>
+
+<section id="rules">
+  <div class="wrap">
+    <div class="sec-h rv"><span class="pill">Honest rules</span><h2>Everything, in plain words.</h2><p>All of this is enforced by the contract. Its source code is publicly verified, so you can read every rule yourself.</p></div>
+    <div class="rules">
+      <div class="rule rv"><div class="ic" style="background:var(--y)">✦</div><div><b>6,666 cards, never more</b><p>2,260 free and 4,406 paid. Fused cards replace the three they burn, so the circulating supply only shrinks.</p></div></div>
+      <div class="rule rv"><div class="ic" style="background:var(--mint)">0</div><div id="ruleFree"><b>Free cards: sold out</b><p>Every free card is claimed. The rest are paid, up to 10 per wallet.</p></div></div>
+      <div class="rule rv"><div class="ic" style="background:var(--peach)">$</div><div><b>$0.60 per paid card</b><p>Priced live in BNB from Chainlink's BNB/USD feed. Overpay and the contract refunds the difference in the same transaction. Max 10 per Agent ID.</p></div></div>
+      <div class="rule rv"><div class="ic" style="background:var(--lilac)">🤖</div><div><b>Agents only can mint</b><p>The contract checks the SPACE ID Agent ID, a soulbound name only Binance Agentic Wallets can claim, and rejects contracts calling on someone's behalf.</p></div></div>
+      <div class="rule rv"><div class="ic" style="background:var(--sky)">3</div><div><b>Fusion: 3 → 1, no luck</b><p>Three cards of the same tier always become one card of the next tier. Anyone holding cards can fuse.</p></div></div>
+      <div class="rule rv"><div class="ic" style="background:var(--pink)">↔</div><div><b>Trade freely</b><p>Standard BNB Chain NFTs. Already listed on Element, one collection per series. 5% creator royalty where the marketplace supports it.</p></div></div>
+    </div>
+    <div class="nope rv"><b>What we do not promise:</b> no roadmap, no "utility" later. The only token plan is the $SONIC launch and holder airdrop, explained on the <a href="tokenomics.html" style="color:var(--y)">Tokenomics</a> page. Paid mint money goes to the creator. The owner can only open or close the mint, update the metadata link and withdraw. Prices, supply and limits cannot be changed.</div>
+    <div class="contract rv"><code id="addr">0x0617A7c1e3C11BCf70165e2Eba47d72f714CBe07</code><button class="btn btn--sm" id="copyAddr">Copy</button><a class="btn btn--sm btn--y" href="https://bscscan.com/address/0x0617A7c1e3C11BCf70165e2Eba47d72f714CBe07" target="_blank" rel="noopener">BscScan ↗</a><a class="btn btn--sm" href="https://repo.sourcify.dev/56/0x0617A7c1e3C11BCf70165e2Eba47d72f714CBe07" target="_blank" rel="noopener">Verified source ↗</a></div>
+  </div>
+</section>
+
+<section id="market">
+  <div class="wrap">
+    <div class="sec-h rv"><span class="pill">Market</span><h2>Buy and sell on Element.</h2><p>Every Sonic card is a standard BNB Chain NFT, already tradable on Element. Each series has its own collection page. No Agent ID needed to buy.</p></div>
+    <div class="mkt rv">
+      <a class="mkt-c" href="https://element.market/collections/sonic-protocol" target="_blank" rel="noopener"><b>Series 1</b><span class="mono">First series</span><span class="mono mkt-a">0xEe58…Fb6d</span><span class="btn btn--sm btn--y">Trade on Element ↗</span></a>
+      <a class="mkt-c" href="https://element.market/collections/sonic-protocol-1" target="_blank" rel="noopener"><b>Series 2</b><span class="mono">Second series</span><span class="mono mkt-a">0x70c1…9237</span><span class="btn btn--sm btn--y">Trade on Element ↗</span></a>
+      <a class="mkt-c" href="https://element.market/collections/sonic-protocol-2" target="_blank" rel="noopener"><b>Series 3</b><span class="mono">Paid series · now minting</span><span class="mono mkt-a">0x0617…BE07</span><span class="btn btn--sm btn--y">Trade on Element ↗</span></a>
+    </div>
+    <p class="mono rv" style="text-align:center;font-size:13px;margin-top:14px">Always check the contract address before buying. Fused cards keep trading in the same collection.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-h rv"><span class="pill">FAQ</span><h2>Questions</h2></div>
+    <div class="faq">
+      <details class="rv"><summary>I don't have an Agentic Wallet. Can I join?</summary><p>You can't mint, but you can buy cards on <a href="#market" style="color:var(--y)">Element</a>, keep them, trade them and fuse them right here in My Deck with any wallet.</p></details>
+      <details class="rv"><summary>How do I get an Agent ID?</summary><p>Open the Binance Wallet app, set up an Agentic Wallet and claim your .ai Agent ID from the banner. Your agent can check with <code>baw wallet agent-id</code>.</p></details>
+      <details class="rv"><summary>How many Tones make a Sonic Boom?</summary><p>27. Three Tones make a Chord, three Chords make a Harmony, three Harmonies make a Sonic Boom. One Agent ID can mint 11 cards at most, so a Sonic Boom always takes trading or teamwork.</p></details>
+      <details class="rv"><summary>Is the art on-chain?</summary><p>Traits, seeds and fusion history are on-chain. The card images are rendered from that data by our open server code and served from sonicprotocol.fun.</p></details>
+      <details class="rv"><summary>Why can't I hear anything?</summary><p>Phones block sound until you tap. Tap a card once, and check your silent switch.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="launch">
+  <div class="wrap">
+    <div class="launch-band rv">
+      <span class="pill pill--y">$SONIC · Launch day</span>
+      <h2>Sunday, 15 November.<br>PancakeSwap, 00:00 UTC.</h2>
+      <p>No bonding curve this time. $SONIC lists directly on PancakeSwap and the LP tokens are burned at launch. Holding a card? You are in the 12% holder airdrop, snapshot at the sale end.</p>
+      <div class="cd" id="cd" role="timer" aria-label="Countdown to the $SONIC launch">
+        <div><b id="cdD">0</b><small>days</small></div>
+        <div><b id="cdH">0</b><small>hours</small></div>
+        <div><b id="cdM">0</b><small>minutes</small></div>
+        <div><b id="cdS">0</b><small>seconds</small></div>
+      </div>
+      <p class="launch-note">Official contract address posts here at launch. Ignore every other.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <a class="logo" href="#top"><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2A2438" stroke-width="2.6" stroke-linecap="round"><path d="M3 12h2M7 8v8M11 5v14M15 8v8M19 11v2"/></svg></i>Sonic Protocol</a>
+  <p class="mono" style="font-size:13px">6,666 sound spirits · BNB Chain · Built for agents</p>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<nav class="bnav" aria-label="Quick"><a href="#fuse"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><circle cx="12" cy="17" r="4"/></svg>Fuse</a><a href="#claim"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M12 8c-2-4-6-4-6-1s4 1 6 1c2 0 6 2 6-1s-4-3-6 1"/></svg>Claim</a><a href="#tiers"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 16h12M8 12h8M10 8h4M12 4v0"/></svg>Tiers</a><a href="#deck"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="10" height="14" rx="2"/><path d="M16 6l4 1.5-3.5 12-3.5-1"/></svg>My Deck</a><a href="#rules"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6z"/><path d="M9 10h6M9 14h6M9 18h4"/></svg>Rules</a></nav>
+<button class="to-top" type="button" aria-label="Back to top">↑</button>
+
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+<script src="js/traits.js"></script>
+<script src="js/app.js"></script>
+<script src="js/ux.js" defer></script>
+<script src="js/cards.js" defer></script>
+
+<script>
+(function () {
+  var T = Date.UTC(2026, 10, 15, 0, 0, 0);
+  var d = document.getElementById("cdD"), h = document.getElementById("cdH"), m = document.getElementById("cdM"), s = document.getElementById("cdS");
+  if (!d) return;
+  function pad(n) { return String(n).padStart(2, "0"); }
+  function tick() {
+    var left = Math.max(0, T - Date.now());
+    d.textContent = Math.floor(left / 86400000);
+    h.textContent = pad(Math.floor(left / 3600000) % 24);
+    m.textContent = pad(Math.floor(left / 60000) % 60);
+    s.textContent = pad(Math.floor(left / 1000) % 60);
+  }
+  tick(); setInterval(tick, 1000);
+})();
+</script>
+</body>
+</html>

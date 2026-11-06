@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>$SONIC Tokenomics · Sonic Protocol</title>
+<meta name="description" content="$SONIC launches Sunday, 15 November 2026 on PancakeSwap, direct to the pool with no bonding curve. 12% of supply is airdropped to every holder of the 6,666 cards, weighted by card rarity.">
+<meta property="og:title" content="$SONIC Tokenomics">
+<meta property="og:description" content="1,000,000,000 supply. 12% airdrop to every Sonic Protocol holder, across all 6,666 cards. Direct PancakeSwap launch on 15 November, liquidity burned.">
+<meta property="og:image" content="https://www.sonicprotocol.fun/og.png">
+<meta name="theme-color" content="#FFF6E8">
+<link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/mobile.css">
+<style>
+.tk-hero{padding:34px 0 18px;text-align:center}
+.tk-hero h1{font-size:clamp(40px,11vw,78px);line-height:.95;margin:14px 0 12px;letter-spacing:-.025em}
+.tk-hero .lead{max-width:640px;margin:0 auto;color:var(--ink2);font-size:18px}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:22px}
+.fact{background:#fff;border:2.5px solid var(--ink);border-radius:20px;padding:12px 14px;box-shadow:0 4px 0 var(--ink);text-align:left}
+.fact small{display:block;font:700 11px var(--mono);letter-spacing:.12em;color:var(--mute);text-transform:uppercase}
+.fact b{display:block;font-size:clamp(17px,4.6vw,22px);line-height:1.15;margin-top:3px}
+@media(min-width:760px){.facts{grid-template-columns:repeat(4,1fr)}}
+.alloc{display:grid;gap:22px;align-items:center}
+@media(min-width:860px){.alloc{grid-template-columns:1fr 1.1fr}}
+.donut{position:relative;width:min(78vw,340px);aspect-ratio:1;margin:0 auto}
+.donut svg{width:100%;height:100%;transform:rotate(-90deg);overflow:visible}
+.donut circle{fill:none;stroke-width:15;transition:stroke-width .3s cubic-bezier(.2,.8,.2,1),opacity .3s;cursor:pointer}
+.donut circle.dim{opacity:.4}.donut circle.on{stroke-width:17;filter:drop-shadow(0 0 0 #2A2438)}
+.donut .ctr{position:absolute;inset:0;display:grid;place-items:center;text-align:center;pointer-events:none}
+.donut .ctr b{display:block;font-size:clamp(34px,10vw,48px);line-height:1}
+.donut .ctr span{display:block;font:700 12px var(--mono);letter-spacing:.1em;color:var(--ink2);text-transform:uppercase;margin-top:4px;max-width:150px}
+.legend{display:grid;gap:10px}
+.lg{display:flex;gap:12px;align-items:flex-start;background:#fff;border:2.5px solid var(--ink);border-radius:20px;padding:13px 15px;box-shadow:0 4px 0 var(--ink);cursor:pointer;text-align:left;width:100%;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
+.lg.on{transform:translateY(-3px);box-shadow:0 7px 0 var(--ink)}
+.lg i{flex:0 0 18px;height:18px;border-radius:6px;border:2px solid var(--ink);margin-top:4px}
+.lg b{display:flex;justify-content:space-between;gap:8px;font-size:17px}
+.lg b em{font-style:normal;font-family:var(--mono)}
+.lg p{margin:2px 0 0;color:var(--ink2);font-size:15px}
+.pts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:760px){.pts{grid-template-columns:repeat(4,1fr)}}
+.pt{border:2.5px solid var(--ink);border-radius:22px;padding:14px;box-shadow:0 4px 0 var(--ink);text-align:center;background:linear-gradient(135deg,var(--c1),var(--c2))}
+.pt small{display:block;font:700 11px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.pt b{display:block;font-size:40px;line-height:1;margin:6px 0 2px}
+.pt span{display:block;font-weight:600}
+.pt .per{display:block;font-style:normal;font-weight:700;font-size:14px;margin-top:6px;background:rgba(255,255,255,.7);border:2px solid var(--ink);border-radius:99px;padding:2px 8px}
+.pt em{display:block;font-style:normal;font:700 11px var(--mono);opacity:.75;margin-top:4px}
+.steps{display:grid;gap:10px;counter-reset:s}
+.step{display:flex;gap:12px;background:#fff;border:2.5px solid var(--ink);border-radius:20px;padding:13px 15px;box-shadow:0 4px 0 var(--ink)}
+.step:before{counter-increment:s;content:counter(s);flex:0 0 36px;height:36px;border-radius:12px;background:var(--y);border:2px solid var(--ink);display:grid;place-items:center;font-weight:700}
+.step b{display:block}.step p{margin:2px 0 0;color:var(--ink2);font-size:15px}
+.calc{background:#fff;border:2.5px solid var(--ink);border-radius:26px;padding:18px;box-shadow:0 6px 0 var(--ink)}
+.calc .row{display:flex;gap:8px;flex-wrap:wrap}
+.calc input[type=text]{flex:1 1 220px;min-width:0;border:2.5px solid var(--ink);border-radius:14px;padding:11px 12px;font:600 14px var(--mono);background:var(--paper)}
+.cnt{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0}
+@media(min-width:760px){.cnt{grid-template-columns:repeat(4,1fr)}}
+.cn{border:2px solid var(--ink);border-radius:16px;padding:10px;text-align:center;background:var(--paper)}
+.cn small{display:block;font:700 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
+.cn .q{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:6px}
+.cn button{width:34px;height:34px;border-radius:11px;border:2px solid var(--ink);background:#fff;font-weight:700;font-size:18px;box-shadow:0 2px 0 var(--ink)}
+.cn button:active{transform:translateY(2px);box-shadow:none}
+.cn output{min-width:2ch;font-size:22px;font-weight:700}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.res div{background:var(--ink);color:#fff;border-radius:18px;padding:12px 14px}
+.res small{display:block;font:700 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--y)}
+.res b{display:block;font-size:clamp(20px,5.4vw,28px);line-height:1.15;margin-top:2px}
+.calc .note{margin:12px 0 0;color:var(--ink2);font-size:14px}
+.calc .msg{margin:10px 0 0;font-size:14px;min-height:1.2em}
+.tl{display:grid;gap:10px}
+@media(min-width:860px){.tl{grid-template-columns:repeat(4,1fr)}}
+.tl div{background:#fff;border:2.5px solid var(--ink);border-radius:20px;padding:14px;box-shadow:0 4px 0 var(--ink)}
+.tl small{display:inline-block;font:700 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;background:var(--y);border:2px solid var(--ink);border-radius:99px;padding:2px 8px}
+.tl b{display:block;margin-top:8px}.tl p{margin:2px 0 0;color:var(--ink2);font-size:15px}
+.back{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px}
+</style>
+</head>
+<body>
+<div class="sp-progress" aria-hidden="true"></div>
+<div class="announce" role="note"><span class="announce-dot" aria-hidden="true"></span><span><b>$SONIC</b> launches Sunday, 15 November on PancakeSwap, 00:00 UTC. No bonding curve, direct to the pool. Every holder of the 6,666 cards shares a 12% airdrop.</span></div>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Sonic Protocol home"><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2A2438" stroke-width="2.6" stroke-linecap="round"><path d="M3 12h2M7 8v8M11 5v14M15 8v8M19 11v2"/></svg></i>Sonic Protocol</a>
+    <nav class="nav" aria-label="Main"><a href="index.html#fuse">Fuse</a><a href="index.html#claim">Claim</a><a href="index.html#tiers">Tiers</a><a href="index.html#deck">My Deck</a><a href="/tokenomics" aria-current="page">Tokenomics</a></nav>
+    <a class="btn btn--y btn--sm" href="index.html#claim">Mint now</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="tk-hero">
+  <div class="wrap">
+    <span class="pill pill--y">● $SONIC · BNB Chain</span>
+    <h1>$SONIC<br>Tokenomics</h1>
+    <p class="lead">$SONIC launches Sunday, 15 November 2026 on PancakeSwap, direct to the pool, no bonding curve. 12% of the supply goes to every holder of the 6,666 Sonic Protocol cards, held in a public airdrop wallet. Everything else is liquidity and open market float, and the LP tokens are burned.</p>
+    <div class="facts">
+      <div class="fact rv"><small>Total supply</small><b>1,000,000,000</b></div>
+      <div class="fact rv"><small>Launch</small><b>PancakeSwap · 15 Nov, 00:00 UTC</b></div>
+      <div class="fact rv"><small>Holder airdrop</small><b>12% · all 6,666 cards</b></div>
+      <div class="fact rv"><small>Team allocation</small><b>0%</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="allocation">
+  <div class="wrap">
+    <div class="sec-h rv"><span class="pill">Allocation</span><h2>Where every token goes.</h2><p>Supply is fixed at 1 billion. No bonding curve and no presale: the pool opens on PancakeSwap at launch, seeded with 88% of the supply. The other 12% waits in a public airdrop wallet for card holders.</p></div>
+    <div class="alloc">
+      <div class="donut rv" id="donut">
+        <svg viewBox="0 0 120 120" role="img" aria-label="Allocation chart: 12% holder airdrop, 88% liquidity and open market"></svg>
+        <div class="ctr"><div><b id="dPct">100%</b><span id="dLbl">1B $SONIC</span></div></div>
+      </div>
+      <div class="legend" id="legend">
+        <button class="lg rv" type="button" data-i="0"><i style="background:var(--y)"></i><div><b>Holder airdrop <em>12%</em></b><p>120,000,000 $SONIC. Set aside before launch in a public airdrop wallet, only for Sonic Protocol NFT holders.</p></div></button>
+        <button class="lg rv" type="button" data-i="1"><i style="background:var(--mint)"></i><div><b>Liquidity and open market <em>88%</em></b><p>880,000,000 $SONIC. Seeded into the PancakeSwap pool at launch and trading openly from the first block. No presale, no curve, no private round.</p></div></button>
+        <button class="lg rv" type="button" data-i="2"><i style="background:var(--lilac)"></i><div></div></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="airdrop">
+  <div class="wrap">
+    <div class="sec-h rv"><span class="pill">Airdrop</span><h2>Rarer cards, bigger share.</h2><p>Every card earns points. Fused cards earn a bonus, so climbing tiers pays off. Every wallet holding a card shares the 12%, no ranking and no cut-off. Every card you hold adds to your allocation.</p></div>
+    <div class="pts">
+      <div class="pt rv" style="--c1:#FFD2B3;--c2:#FF9E8C"><small>Common</small><b>1</b><span>Tone</span><i class="per" data-t="0">≈ … $SONIC</i><em>point</em></div>
+      <div class="pt rv" style="--c1:#E2D4FF;--c2:#AE92FF"><small>Rare</small><b>4</b><span>Chord</span><i class="per" data-t="1">≈ … $SONIC</i><em>points · 3 Tones + bonus</em></div>
+      <div class="pt rv" style="--c1:#BDF3DB;--c2:#9BCBFF"><small>Epic</small><b>12</b><span>Harmony</span><i class="per" data-t="2">≈ … $SONIC</i><em>points · 9 Tones + bonus</em></div>
+      <div class="pt rv" style="--c1:#FFEA94;--c2:#FFBE2E"><small>Legendary</small><b>40</b><span>Sonic Boom</span><i class="per" data-t="3">≈ … $SONIC</i><em>points · 27 Tones + bonus</em></div>
+    </div>
+    <div class="steps" style="margin-top:18px">
+      <div class="step rv"><div><b>Snapshot when the NFT sale ends</b><p>We read every Sonic Protocol card on-chain and who holds it.</p></div></div>
+      <div class="step rv"><div><b>Points per wallet</b><p>Each wallet's points are the sum of its cards. Cards listed on a marketplace still count for their owner.</p></div></div>
+      <div class="step rv"><div><b>Every holder counts</b><p>All 6,666 cards are eligible. One card is enough to get an allocation.</p></div></div>
+      <div class="step rv"><div><b>Your share</b><p>120,000,000 × your points ÷ total points of all cards. One wallet can receive at most 2,400,000 $SONIC (2% of the airdrop).</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="check">
+  <div class="wrap">
+    <div class="sec-h rv"><span class="pill">Estimate</span><h2>Check your points.</h2><p>Load a wallet or tap in your cards to see your points and a live estimate.</p></div>
+    <div class="calc rv">
+      <div class="row"><input type="text" id="wIn" placeholder="0x… wallet address" autocomplete="off" spellcheck="false" inputmode="text" aria-label="Wallet address"><button class="btn btn--y" type="button" id="wGo">Load wallet</button></div>
+      <p class="msg" id="wMsg" role="status"></p>
+      <div class="cnt" id="cnt"></div>
+      <div class="res"><div><small>Your points</small><b id="rPts">0</b></div><div><small>Estimated $SONIC</small><b id="rTok">0</b></div></div>
+      <p class="note" id="rNote">Estimate assumes all 6,666 cards are minted. The real share is set at the snapshot.</p>
+    </div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="wrap">
+    <div class="sec-h rv"><span class="pill">Timeline</span><h2>What happens when.</h2></div>
+    <div class="tl">
+      <div class="rv"><small>Now</small><b>NFT sale</b><p>Claim, buy and fuse cards. Higher tiers earn more points.</p></div>
+      <div class="rv"><small>Sale ends</small><b>Snapshot</b><p>Holdings are frozen for the airdrop ranking.</p></div>
+      <div class="rv"><small>Sun, 15 Nov · 00:00 UTC</small><b>$SONIC launches</b><p>Direct listing on PancakeSwap. The pool opens with 88% of the supply and the LP tokens are burned.</p></div>
+      <div class="rv"><small>After launch</small><b>Airdrop</b><p>$SONIC is sent from the public airdrop wallet to every holder.</p></div>
+    </div>
+    <div class="nope rv"><b>Keep in mind:</b> $SONIC is a meme token. It has no promised value, roadmap or "utility". Only buy what you are happy to lose. The official token address will be posted on this page at launch; ignore any other.</div>
+    <div class="back rv"><a class="btn btn--y btn--lg" href="index.html#claim">Mint your card</a><a class="btn btn--lg" href="index.html#deck">Fuse my cards</a></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <a class="logo" href="index.html"><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2A2438" stroke-width="2.6" stroke-linecap="round"><path d="M3 12h2M7 8v8M11 5v14M15 8v8M19 11v2"/></svg></i>Sonic Protocol</a>
+  <p class="mono" style="font-size:13px">6,666 sound spirits · BNB Chain · Built for agents</p>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<nav class="bnav" aria-label="Quick"><a href="index.html#fuse"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><circle cx="12" cy="17" r="4"/></svg>Fuse</a><a href="index.html#claim"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M12 8c-2-4-6-4-6-1s4 1 6 1c2 0 6 2 6-1s-4-3-6 1"/></svg>Claim</a><a href="#allocation"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v9l7 5"/></svg>Split</a><a href="#airdrop"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg>Airdrop</a><a href="#check"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Check</a></nav>
+<button class="to-top" type="button" aria-label="Back to top">↑</button>
+
+<script>
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const fmt = (n) => Math.round(n).toLocaleString('en-US');
+  const AIRDROP = 120000000, CAP = 2400000, PTS = [1, 4, 12, 40];
+  const TN = [['Tone', 'Common'], ['Chord', 'Rare'], ['Harmony', 'Epic'], ['Sonic Boom', 'Legendary']];
+
+  // reveal
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.rv').forEach((el) => io.observe(el));
+
+  // donut
+  const parts = [{ p: 12, c: '#FFD84D', l: 'Holder airdrop' }, { p: 88, c: '#B5F0D3', l: 'Liquidity and open market' }];
+  const svg = $('#donut svg'), R = 46, C = 2 * Math.PI * R; let off = 0;
+  svg.innerHTML = `<circle cx="60" cy="60" r="${R}" style="stroke:#FFFBF3;stroke-width:15"></circle><circle cx="60" cy="60" r="${R + 8.6}" style="stroke:#2A2438;stroke-width:2"></circle><circle cx="60" cy="60" r="${R - 8.6}" style="stroke:#2A2438;stroke-width:2"></circle>` + parts.map((s, i) => { const len = C * s.p / 100, gap = 0.8; const el = `<circle data-i="${i}" cx="60" cy="60" r="${R}" stroke="${s.c}" data-len="${len - gap}" style="stroke-dasharray:0 ${C};stroke-dashoffset:${-off}"></circle>`; off += len; return el; }).join('');
+  const segs = [...svg.querySelectorAll('circle[data-i]')], lgs = [...document.querySelectorAll('.lg')];
+  const drawIn = () => segs.forEach((s, i) => setTimeout(() => { s.style.transition = 'stroke-dasharray .9s cubic-bezier(.2,.8,.2,1),stroke-width .3s,opacity .3s'; s.style.strokeDasharray = `${s.dataset.len} ${C}`; }, i * 160));
+  new IntersectionObserver((es, o) => { if (es[0].isIntersecting) { drawIn(); o.disconnect(); } }, { threshold: .3 }).observe($('#donut'));
+  if (!('IntersectionObserver' in window)) drawIn();
+  let pinned = -1;
+  const pick = (i) => {
+    segs.forEach((s, j) => { s.classList.toggle('on', j === i); s.classList.toggle('dim', i > -1 && j !== i); });
+    lgs.forEach((l, j) => l.classList.toggle('on', j === i));
+    $('#dPct').textContent = i > -1 ? parts[i].p + '%' : '100%';
+    $('#dLbl').textContent = i > -1 ? parts[i].l : '1B $SONIC';
+    if (i > -1 && navigator.vibrate) try { navigator.vibrate(8); } catch {}
+  };
+  segs.forEach((s) => { const i = +s.dataset.i; s.addEventListener('pointerenter', () => pinned < 0 && pick(i)); s.addEventListener('pointerleave', () => pinned < 0 && pick(-1)); s.addEventListener('click', () => { pinned = pinned === i ? -1 : i; pick(pinned); }); });
+  lgs.forEach((l) => { const i = +l.dataset.i; l.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse' && pinned < 0) pick(i); }); l.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse' && pinned < 0) pick(-1); }); l.addEventListener('click', () => { pinned = pinned === i ? -1 : i; pick(pinned); }); });
+
+  // estimator
+  const counts = [0, 0, 0, 0]; let totalPts = 0;
+  $('#cnt').innerHTML = TN.map((t, i) => `<div class="cn"><small>${t[0]}</small><div class="q"><button type="button" data-d="-1" data-i="${i}" aria-label="Fewer ${t[0]} cards">−</button><output id="q${i}">0</output><button type="button" data-d="1" data-i="${i}" aria-label="More ${t[0]} cards">+</button></div></div>`).join('');
+  const render = () => {
+    counts.forEach((c, i) => { $('#q' + i).textContent = c; });
+    const pts = counts.reduce((a, c, i) => a + c * PTS[i], 0);
+    $('#rPts').textContent = fmt(pts);
+    const base = Math.max(totalPts, pts, 1);
+    $('#rTok').textContent = pts ? fmt(Math.min(CAP, AIRDROP * pts / base)) : '0';
+  };
+  $('#cnt').addEventListener('click', (e) => { const b = e.target.closest('button[data-d]'); if (!b) return; const i = +b.dataset.i; counts[i] = Math.max(0, Math.min(999, counts[i] + +b.dataset.d)); render(); if (navigator.vibrate) try { navigator.vibrate(6); } catch {} });
+  fetch('/api/stats').then((r) => r.json()).then((s) => { if (s && Array.isArray(s.tiers)) { const minted = (s.free || 0) + (s.paid || 0); totalPts = s.tiers.reduce((a, c, i) => a + c * PTS[i], 0) + Math.max(0, 6666 - minted); document.querySelectorAll('.per').forEach((el) => { el.textContent = '≈ ' + fmt(Math.min(CAP, AIRDROP * PTS[+el.dataset.t] / Math.max(totalPts, 1))) + ' $SONIC per card'; }); $('#rNote').textContent = `Estimate assumes all 6,666 cards are minted (${fmt(minted)} so far). Fusing more cards changes the totals. The real share is set at the snapshot.`; render(); } }).catch(() => {});
+  const msg = $('#wMsg');
+  const load = async () => {
+    const w = $('#wIn').value.trim();
+    if (!/^0x[0-9a-fA-F]{40}$/.test(w)) { msg.textContent = 'Paste a full 0x wallet address.'; return; }
+    msg.textContent = 'Reading cards on-chain…';
+    try { const j = await fetch('/api/deck?wallet=' + w).then((r) => r.json()); if (j.error) throw new Error(j.error);
+      counts.fill(0); (j.cards || []).forEach((c) => { if (c.tier >= 0 && c.tier < 4) counts[c.tier]++; });
+      msg.textContent = j.cards && j.cards.length ? `${j.cards.length} card${j.cards.length > 1 ? 's' : ''} found in this wallet.` : 'No Sonic Protocol cards in this wallet yet.'; render();
+    } catch { msg.textContent = 'Could not read this wallet right now.'; }
+  };
+  $('#wGo').addEventListener('click', load);
+  $('#wIn').addEventListener('keydown', (e) => { if (e.key === 'Enter') load(); });
+  render();
+})();
+</script>
+<script src="js/ux.js" defer></script>
+</body>
+</html>

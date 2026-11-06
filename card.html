@@ -1,0 +1,11 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sonic Protocol card</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css">
+<style>body{min-height:100vh;display:grid;place-items:center;margin:0}body:before{inset:0}#c{width:min(86vw,62vh*5/7,420px)}p{text-align:center;font-family:var(--mono);font-size:12px;color:var(--ink2)}</style></head>
+<body><div><div id="c"></div><p>Tap the card to hear it ♪</p></div>
+<script src="js/traits.js"></script><script>
+(async()=>{const{TIERS}=SonicTraits;const id=new URLSearchParams(location.search).get('id');const t=await fetch('/api/card/'+id).then(r=>r.json());if(t.error){document.body.textContent='Card not found';return}
+const P=TIERS[t.tier];const c=document.getElementById('c');c.className='card';c.dataset.tier=t.tier;c.style.setProperty('--c1',P.c1);c.style.setProperty('--c2',P.c2);
+const n=t.chord?t.chord.map(x=>x.name).join(' '):t.note.name;c.innerHTML=`<div class="win"><img src="/art/${t.art}.webp" alt=""><span class="rar">${P.rarity.toUpperCase()}</span><span class="ser">#${String(t.id).padStart(4,'0')}</span></div><div class="ttl"><span>${t.title}</span><em>${['I','II','III','IV'][t.tier]}</em></div><div class="st"><div><small>${t.chord?'CHORD':'NOTE'}</small><b>${n}</b></div><div><small>FREQ</small><b>${Math.round(t.note.hz)} Hz</b></div><div><small>WAVE</small><b>${t.wave}</b></div></div><div class="holo"></div><span class="ring"></span>`;
+let ctx;const tone=(hz,w,d,v)=>{ctx=ctx||new(window.AudioContext||webkitAudioContext)();const o=ctx.createOscillator(),g=ctx.createGain(),t0=ctx.currentTime+d;o.type=w;o.frequency.value=hz;g.gain.setValueAtTime(.0001,t0);g.gain.exponentialRampToValueAtTime(.25*v,t0+.02);g.gain.exponentialRampToValueAtTime(.0001,t0+1.4);o.connect(g);g.connect(ctx.destination);o.start(t0);o.stop(t0+1.5)};
+c.onclick=()=>{(t.chord||[t.note]).forEach((x,i)=>tone(x.hz,t.wave,i*.09,1));c.classList.remove('playing');void c.offsetWidth;c.classList.add('playing')}})();
+</script></body></html>
